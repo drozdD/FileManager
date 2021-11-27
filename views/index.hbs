@@ -1,0 +1,43 @@
+<div>
+    <div id="nav">
+        <div class="link">
+            <a href="/">
+                <b>UPLOAD</b>
+            </a>
+        </div>
+        <div class="link">
+            <a href="/fileManager">
+                <b>FILE MANAGER</b>
+            </a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="leftContainer">
+            multiupload
+        </div>
+        <div id="rightContainer">
+            <div id="form">
+                <input type="file" id="fileInput" multiple>
+                <button id="submitUpload">upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function klik() {
+        var fd = new FormData()
+
+        for (var i = 0; i < document.getElementById("fileInput").files.length; i++) {
+            fd.append("file", document.getElementById("fileInput").files[i]) // plik z inputa
+        }
+
+        const body = fd
+
+        const headers = { "Content-Type": "application/json" }
+
+        document.getElementById("fileInput").value = ''
+
+        fetch("/uploadFiles", { method: "post", body })
+    }
+    document.getElementById('submitUpload').onclick = function () { klik() }
+</script>

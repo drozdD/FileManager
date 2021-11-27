@@ -1,0 +1,57 @@
+#nav{
+    background-color: #1BBC9B;
+    width: 100%;
+    min-height: 100px;
+    font-size: 35pt;
+}
+.link{
+    margin: 20px;
+    justify-content: center;
+    align-content: center;
+    float: left;
+}
+.link a {
+    color: #2D3E50;
+}
+#leftContainer{
+    background-color: #AEAEAE;
+    width: 30%;
+    min-height: 85vh;
+    text-align: center;
+    font-size: 20pt;
+    padding-top: 20px;
+    color: #2D3E50;
+    float: left;
+}
+#leftContainer a{
+    color: #2D3E50;
+}
+#container{
+    min-height: 85vh;
+}
+#rightContainer{
+    width: 70%;
+    background-color: white;
+    min-height: 85vh;
+    float: left;
+}
+#form{
+    margin: 20px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.navTr{
+    background-color: #2D3E50;
+    width: 100%;
+}
+.navTd{
+    color: white;
+    text-align: center;
+    font-size: 15pt;
+}
+a{
+ color: white;
+}
+

@@ -1,0 +1,46 @@
+<div>
+    <div id="nav">
+        <div class="link">
+            <a href="/">
+                <b>UPLOAD</b>
+            </a>
+        </div>
+        <div class="link">
+            <a href="/fileManager">
+                <b>FILE MANAGER</b>
+            </a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="leftContainer">
+            File Manager<br><br>
+            <a href="/del">Usuń dane z tablicy</a>
+        </div>
+        <div id="rightContainer">
+            <table>
+                <tr class="navTr">
+                    <td class="navTd">id</td>
+                    <td class="navTd">obraz</td>
+                    <td class="navTd">name</td>
+                    <td class="navTd">size</td>
+                    <td class="navTd">type</td>
+                    <td class="navTd">-</td>
+                    <td class="navTd">-</td>
+                    <td class="navTd">-</td>
+                </tr>
+                {{#each files}}
+                <tr class="navTr">
+                    <td class="navTd">{{id}}</td>
+                    <td class="navTd"><img src={{img}} width="60" height="60"></td>
+                    <td class="navTd">{{name}}</td>
+                    <td class="navTd">{{size}}</td>
+                    <td class="navTd">{{type}}</td>
+                    <td class="navTd"><a href="/del/{{id}}">DELETE</a></td>
+                    <td class="navTd"><a href="/info/{{id}}">INFO</a></td>
+                    <td class="navTd"><a href="/download/{{id}}">DOWNLOAD</a></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</div>
