@@ -98,8 +98,7 @@ app.post("/uploadFiles", function (req, res) {
                 }
 
                 var oldPath = files.file[i].path;
-                var info = path.parse(oldPath)
-                filename = info.base
+                var filename = oldPath.replace(/^.*[\\\/]/, '')
                 var newPath = path.join(__dirname, 'upload', filename)
                 var rawData = fs.readFileSync(oldPath)
                 File.downloadName = filename
@@ -138,8 +137,7 @@ app.post("/uploadFiles", function (req, res) {
             }
 
             var oldPath = files.file.path;
-            var info = path.parse(oldPath)
-            filename = info.base
+            var filename = oldPath.replace(/^.*[\\\/]/, '')
             var newPath = path.join(__dirname, 'upload', filename)
             var rawData = fs.readFileSync(oldPath)
             File.downloadName = filename
