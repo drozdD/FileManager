@@ -1,6 +1,6 @@
 var express = require("express")
 var app = express()
-const PORT = 3000;
+var PORT = process.env.PORT || 3000;
 var path = require("path")
 var hbs = require('express-handlebars');
 app.use(express.static('static'))
@@ -99,7 +99,7 @@ app.post("/uploadFiles", function (req, res) {
 
                 var oldPath = files.file[i].path;
                 var filename = oldPath.replace(/^.*[\\\/]/, '')
-                var newPath = path.join(__dirname, 'upload') + '\\' + filename
+                var newPath = path.join(__dirname, 'upload', filename)
                 var rawData = fs.readFileSync(oldPath)
                 File.downloadName = filename
                 File.path = newPath
@@ -138,7 +138,7 @@ app.post("/uploadFiles", function (req, res) {
 
             var oldPath = files.file.path;
             var filename = oldPath.replace(/^.*[\\\/]/, '')
-            var newPath = path.join(__dirname, 'upload') + '\\' + filename
+            var newPath = path.join(__dirname, 'upload', filename)
             var rawData = fs.readFileSync(oldPath)
             File.downloadName = filename
             File.path = newPath
